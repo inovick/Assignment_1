@@ -1,0 +1,23 @@
+#STEP 1: Once you have downloaded the folder and unzipped its contents please open Dada2script.R
+#There are five packages you will need to download in Rstudio
+#vegan, ShortRead, ggplot2, phyloseq and dada2
+
+#STEP 2: Make sure all packages succesfully downloaded (you can check by running library(packagename)
+#If you have problems downloading the dada2 package try: 
+source("https://bioconductor.org/biocLite.R")
+biocLite("dada2")
+
+#STEP 3: Make sure you can sucesfully run the following lines in Rstudio
+path <- "~/Dropbox/BU/BU_Teaching/EcolEvolGenomics/Metabarcoding/Community_Data/Comm_Data" # CHANGE ME to the directory containing the fastq files after unzipping.
+fns <- list.files(path)
+fns
+
+#STEP 4: Open a fastq file
+#Using your Terminal (or Moba if on windows) navigate to the folder with the .fastq files (Community_Data-->Comm_Data-->Comm_Data) and type: head FILENAME.fastq 
+#You should see something like this as output 
+
+@H35JRAZ07IRR8G
+GACTGCGCTATACCTCCGCTTACTTATATGCTTAAATTCAGCGGGTTCTCTTGTCTGACTTCATGCTAAGGGCATGCATCAGCATCCCGACAGCTGCGCGCTTGAGCTGCACGATGCAAGCAAAGCTTGGAACAACAGTACGCTCAAGCTTGGCGCATGGGCCAGGCAGCAAACAAGCCATTTACGAACACAAAAGCGATCGATGACTTGTTGGAAAGCGAAGCAGCAATGC$
++H35JRAZ07IRR8G
+
+^If you get stuck on any of the steps please reach out to us on slack/email BEFORE class on Tuesday 
