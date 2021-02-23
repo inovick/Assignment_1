@@ -3,6 +3,28 @@
 #https://benjjneb.github.io/dada2/tutorial.html
 #with edits by Carly D. Kenkel & Alizah Ali & Nicola Kriefall & Sarah Davies
 
+install.packages("vegan")
+install.packages("ShortRead")*
+install.packages("ggplot2")
+install.packages("phyloseq")*
+install.packages("dada2")*
+
+  if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("dada2")
+BiocManager::install("phyloseq")
+BiocManager::install("ShortRead")
+
+
+
+library(dada2)
+library(phyloseq)
+library(ShortRead)
+getwd()
+
+path <- "~/Home/Desktop/BI586_Spring_2021/Community_Data/Comm_Data" 
+fns <- list.files(path)
+fns
 # source("https://bioconductor.org/biocLite.R")
 # biocLite("dada2")
 # biocLite('vegan')
@@ -13,11 +35,11 @@ library(ggplot2); #packageVersion("ggplot2")
 library(phyloseq); #packageVersion("phyloseq")
 
 #Set path to unzipped, renamed fastq files
-path <- "~/Dropbox/BU/BU_Teaching/EcolEvolGenomics/Metabarcoding/Community_Data/Comm_Data" # CHANGE ME to the directory containing the fastq files after unzipping.
+path <- "~/Dropbox/BU/BU_Teaching/EcolEvolGenomics/Metabarcoding/Community_Data/Comm_Data" 
 fns <- list.files(path)
 #Let's make sure that all of our files are there
 fns
-
+head(Community_Data.fastq)
 ################################
 ##### Trimming/Filtering #######
 ################################
